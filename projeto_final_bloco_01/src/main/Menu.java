@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Menu {
     public static void main(String[] args) {
 
-        
+
         Scanner leia = new Scanner(System.in);
 
         int opcao;
@@ -29,12 +29,12 @@ public class Menu {
             System.out.println("            6 - Sair                                 ");
             System.out.println("                                                     ");
             System.out.println("*****************************************************");
-            System.out.println("Entre com a opção desejada:                          ");
-            System.out.println("                                   " + Cores.TEXT_RESET);
+            System.out.print("Entre com a opção desejada:                            ");
+            System.out.print("                                   " + Cores.TEXT_RESET);
 
             opcao = leia.nextInt();
 
-            if (opcao == 9) {
+            if (opcao == 6) {
                 System.out.println(Cores.TEXT_WHITE_BOLD + "\nSeu sonho do seu novo carro começa aqui!");
                 sobre();
                 leia.close();
@@ -74,6 +74,5 @@ public class Menu {
         System.out.println("Generation Brasil - generation@generation.org");
         System.out.println("github.com/conteudoGeneration");
         System.out.println("*********************************************************");
-    }
     }
 }
