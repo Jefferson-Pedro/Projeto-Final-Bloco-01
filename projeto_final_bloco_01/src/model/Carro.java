@@ -66,4 +66,15 @@ public abstract class Carro {
         System.out.println("Placa: " + this.placa);
         System.out.println("Cor: " + this.cor);
     }
+
+    @Override
+    public String toString() {
+        return "Carro{" +
+                "id=" + id +
+                ", marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", cor='" + cor + '\'' +
+                ", placa=" + placa +
+                '}';
+    }
 }
