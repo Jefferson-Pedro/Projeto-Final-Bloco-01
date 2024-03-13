@@ -37,7 +37,8 @@ public class Menu {
                     break;
                 case 2:
                     System.out.println(Cores.TEXT_WHITE + "Listar todos os Carros \n\n");
-
+                    controller.listar();
+                    exibirMenu();
                     break;
                 case 3:
                     System.out.println(Cores.TEXT_WHITE + "Buscar Carro por ID \n\n");
@@ -45,11 +46,13 @@ public class Menu {
                     break;
                 case 4:
                     System.out.println(Cores.TEXT_WHITE + "Atualizar Dados do Carro\n\n");
-
+                    controller.atualizar();
+                    exibirMenu();
                     break;
                 case 5:
                     System.out.println(Cores.TEXT_WHITE + "Apagar Carro\n\n");
-
+                    controller.deletar();
+                    exibirMenu();
                     break;
                 default:
                     System.out.println(Cores.TEXT_RED_BOLD + "\nOpção Inválida!\n" + Cores.TEXT_RESET);
