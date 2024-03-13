@@ -7,4 +7,6 @@ public interface ICarroDAO {
     public void atualizar();
     public void deletar();
     public void listar();
+
+    public void buscarPorId();
 }
