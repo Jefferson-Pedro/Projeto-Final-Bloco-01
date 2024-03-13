@@ -37,11 +37,11 @@ public class BuilderSedan {
         return this;
     }
 
-    public BuilderSedan lugares(int tamPortaMalas) {
+    public BuilderSedan tamPortaMalas(int tamPortaMalas) {
         this.tamPortaMalas = tamPortaMalas;
         return this;
     }
-    public CarroSedan criaHatch (){
+    public CarroSedan criaSedan (){
         return  new CarroSedan(id, marca, modelo, cor, placa, tamPortaMalas);
     }
 }
