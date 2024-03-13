@@ -26,7 +26,7 @@ public class Menu {
             System.out.println("            3 - Buscar Carro por ID                  ");
             System.out.println("            4 - Atualizar Dados do Carro             ");
             System.out.println("            5 - Apagar Carro                         ");
-            System.out.println("            6 - Sair                                 ");
+            System.out.println("            0 - Sair                                 ");
             System.out.println("                                                     ");
             System.out.println("*****************************************************");
             System.out.print("Entre com a opção desejada:");
