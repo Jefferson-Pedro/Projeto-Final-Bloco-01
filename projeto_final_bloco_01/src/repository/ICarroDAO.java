@@ -8,5 +8,5 @@ public interface ICarroDAO {
     public void deletar();
     public void listar();
 
-    public void buscarPorId();
+    public Carro buscarPorId();
 }
