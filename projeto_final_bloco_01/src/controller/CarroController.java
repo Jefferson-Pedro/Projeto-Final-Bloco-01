@@ -162,8 +162,40 @@ public class CarroController implements ICarroDAO {
     }
 
     @Override
-    public void buscarPorId() {
+    public Carro buscarPorId() {
 
+        System.out.println("*****************************************************");
+        System.out.println(Cores.TEXT_WHITE +" Para começarmos, escolha o tipo de carro a ser modificado:");
+        System.out.println(Cores.TEXT_BLUE + "\t\t\t1- Hatch \n \t\t\t2- Sedan \n \t\t\t3- SUV");
+        System.out.print("Sua opção:");
+        int num = ler.nextInt();
+
+        if (num == 1){
+            for (Carro carro : carroHatches) {
+                if (carro.getId() == id) {
+                    return carro;
+                }
+            }
+            System.out.println("Carro não encontrado.");
+            return null;
+        } else if (num == 2) {
+            for (Carro carro : carroSedans) {
+                if (carro.getId() == id) {
+                    return carro;
+                }
+            }
+            System.out.println("Carro não encontrado.");
+            return null;
+        } else if (num == 3) {
+            for (Carro carro : carroSUVS) {
+                if (carro.getId() == id) {
+                    return carro;
+                }
+            }
+            System.out.println("Carro não encontrado.");
+            return null;
+        }
+        return null;
     }
 
     private CarroHatch criaOuAtualizarHatch(){
