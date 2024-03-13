@@ -22,6 +22,8 @@ public class CarroController implements ICarroDAO {
     List<CarroSedan> carroSedans = new ArrayList<CarroSedan>();
     List<CarroSUV> carroSUVS = new ArrayList<CarroSUV>();
 
+    int id = 1;
+
     @Override
     public Carro criar() {
         System.out.println("*****************************************************");
@@ -29,7 +31,7 @@ public class CarroController implements ICarroDAO {
         System.out.println(Cores.TEXT_BLUE + "\t\t\t1- Hatch \n \t\t\t2- Sedan \n \t\t\t3- SUV");
         System.out.print("Sua opção:");
         int opcao = ler.nextInt();
-        int id = 0;
+
 
         if (opcao == 1){
             CarroHatch novoHatch = criaOuAtualizarHatch();
@@ -53,12 +55,100 @@ public class CarroController implements ICarroDAO {
 
     @Override
     public void atualizar() {
+        System.out.println("*****************************************************");
+        System.out.println(Cores.TEXT_WHITE +" Para começarmos, escolha o tipo de carro a ser modificado:");
+        System.out.println(Cores.TEXT_BLUE + "\t\t\t1- Hatch \n \t\t\t2- Sedan \n \t\t\t3- SUV");
+        System.out.print("Sua opção:");
+        int num = ler.nextInt();
 
+        if (num == 1){
+            System.out.print(Cores.TEXT_WHITE +" Perfeito! Digite o ID do veiculo: ");
+            num = ler.nextInt();
+            for (int i = 0; i < carroHatches.size(); i++) {
+                CarroHatch carroHatch = carroHatches.get(i);
+                if (carroHatch.getId() == num) {
+                    CarroHatch novoHatch = criaOuAtualizarHatch();
+                    carroHatches.set(i, novoHatch);
+                    System.out.println(novoHatch.toString());
+                    System.out.println("Carro Hatch atualizado com sucesso!");
+                    return;
+                }
+            }
+            System.out.println("Carro Hatch não encontrado.");
+
+            } else if (num == 2) {
+                System.out.print(Cores.TEXT_WHITE +" Perfeito! Digite o ID do veiculo: ");
+                num = ler.nextInt();
+                for (int i = 0; i < carroHatches.size(); i++) {
+                    CarroHatch carroHatch = carroHatches.get(i);
+                    if (carroHatch.getId() == num) {
+                        CarroHatch novoHatch = criaOuAtualizarHatch();
+                        carroHatches.set(i, novoHatch);
+                        System.out.println(novoHatch.toString());
+                        System.out.println("Carro Sedan atualizado com sucesso!");
+                        return;
+                    }
+                }
+            System.out.println("Carro Sedan não encontrado.");
+
+            }else if (num == 3) {
+                System.out.print(Cores.TEXT_WHITE +" Perfeito! Digite o ID do veiculo: ");
+                num = ler.nextInt();
+                for (int i = 0; i < carroHatches.size(); i++) {
+                    CarroHatch carroHatch = carroHatches.get(i);
+                    if (carroHatch.getId() == num) {
+                        CarroHatch novoHatch = criaOuAtualizarHatch();
+                        carroHatches.set(i, novoHatch);
+                        System.out.println(novoHatch.toString());
+                        System.out.println("Carro SUV atualizado com sucesso!");
+                        return;
+                    }
+                }
+                System.out.println("Carro SUV não encontrado.");
+        }
     }
 
     @Override
     public void deletar() {
 
+        System.out.println("*****************************************************");
+        System.out.println(Cores.TEXT_WHITE +" Para começarmos, escolha o tipo de carro a ser modificado:");
+        System.out.println(Cores.TEXT_BLUE + "\t\t\t1- Hatch \n \t\t\t2- Sedan \n \t\t\t3- SUV");
+        System.out.print("Sua opção:");
+        int num = ler.nextInt();
+
+        if (num == 1){
+            for (int i = 0; i < carroHatches.size(); i++) {
+                Carro carro = carroHatches.get(i);
+                if (carro.getId() == id) {
+                    carroHatches.remove(i);
+                    System.out.println("Carro deletado com sucesso!");
+                    return;
+                }
+            }
+            System.out.println("Carro não encontrado.");
+
+        } else if (num == 2) {
+            for (int i = 0; i < carroSedans.size(); i++) {
+                Carro carro = carroSedans.get(i);
+                if (carro.getId() == id) {
+                    carroSedans.remove(i);
+                    System.out.println("Carro deletado com sucesso!");
+                    return;
+                }
+            }
+            System.out.println("Carro não encontrado.");
+
+        } else if (num == 3) {
+            for (int i = 0; i < carroSUVS.size(); i++) {
+                Carro carro = carroSUVS.get(i);
+                if (carro.getId() == id) {
+                    carroSUVS.remove(i);
+                    System.out.println("Carro deletado com sucesso!");
+                    return;
+                }
+            }
+        }
     }
 
     @Override
@@ -71,8 +161,13 @@ public class CarroController implements ICarroDAO {
         carroSUVS.stream().forEach(System.out::println);
     }
 
+    @Override
+    public void buscarPorId() {
+
+    }
+
     private CarroHatch criaOuAtualizarHatch(){
-        int id = 0;
+
         System.out.println("Digite as informações do veiculo:");
         System.out.print("Marca:");
         String marca = ler.next();
@@ -104,7 +199,7 @@ public class CarroController implements ICarroDAO {
     }
 
     private CarroSedan criaOuAtualizarSedan(){
-        int id = 0;
+
         System.out.println("Digite as informações do veiculo:");
         System.out.print("Marca:");
         String marca = ler.next();
@@ -136,7 +231,7 @@ public class CarroController implements ICarroDAO {
     }
 
     private CarroSUV criaOuAtualizarSUV(){
-        int id = 0;
+
         System.out.println("Digite as informações do veiculo:");
         System.out.print("Marca:");
         String marca = ler.next();
