@@ -16,7 +16,6 @@ public class CarroHatch extends Carro{
     public void setLugares(int lugares) {
         this.lugares = lugares;
     }
-
     @Override
     public void VisualizarCarro() {
         super.VisualizarCarro();
