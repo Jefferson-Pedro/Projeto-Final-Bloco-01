@@ -34,8 +34,9 @@ public class Menu {
 
             opcao = leia.nextInt();
 
-            if (opcao == 6) {
+            if (opcao == 0) {
                 System.out.println(Cores.TEXT_WHITE_BOLD + "\nSeu sonho do seu novo carro começa aqui!");
+                System.out.println(Cores.TEXT_GREEN + "\nObrigado por usar este programa!");
                 leia.close();
                 System.exit(0);
             }
