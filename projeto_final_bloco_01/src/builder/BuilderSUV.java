@@ -36,11 +36,11 @@ public class BuilderSUV {
         return this;
     }
 
-    public BuilderSUV lugares(String tracao) {
+    public BuilderSUV tracao(String tracao) {
         this.tracao = tracao;
         return this;
     }
-    public CarroSUV criaHatch (){
+    public CarroSUV criaSUV (){
         return  new CarroSUV(id, marca, modelo, cor, placa, tracao);
     }
 }
