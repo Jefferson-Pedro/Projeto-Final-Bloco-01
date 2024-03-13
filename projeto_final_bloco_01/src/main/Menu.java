@@ -42,7 +42,9 @@ public class Menu {
                     break;
                 case 3:
                     System.out.println(Cores.TEXT_WHITE + "Buscar Carro por ID \n\n");
-
+                    Carro carroEncontrado = controller.buscarPorId();
+                    carroEncontrado.VisualizarCarro();
+                    exibirMenu();
                     break;
                 case 4:
                     System.out.println(Cores.TEXT_WHITE + "Atualizar Dados do Carro\n\n");
