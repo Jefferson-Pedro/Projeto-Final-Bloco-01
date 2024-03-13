@@ -112,12 +112,15 @@ public class CarroController implements ICarroDAO {
     public void deletar() {
 
         System.out.println("*****************************************************");
-        System.out.println(Cores.TEXT_WHITE +" Para começarmos, escolha o tipo de carro a ser modificado:");
+        System.out.println(Cores.TEXT_WHITE +" Para começarmos, escolha o tipo de carro a ser apagado:");
         System.out.println(Cores.TEXT_BLUE + "\t\t\t1- Hatch \n \t\t\t2- Sedan \n \t\t\t3- SUV");
         System.out.print("Sua opção:");
         int num = ler.nextInt();
 
         if (num == 1){
+            System.out.println(Cores.TEXT_WHITE +" Informe o ID:");
+            int id = ler.nextInt();
+
             for (int i = 0; i < carroHatches.size(); i++) {
                 Carro carro = carroHatches.get(i);
                 if (carro.getId() == id) {
@@ -129,6 +132,8 @@ public class CarroController implements ICarroDAO {
             System.out.println("Carro não encontrado.");
 
         } else if (num == 2) {
+            System.out.println(Cores.TEXT_WHITE +" Informe o ID:");
+            int id = ler.nextInt();
             for (int i = 0; i < carroSedans.size(); i++) {
                 Carro carro = carroSedans.get(i);
                 if (carro.getId() == id) {
@@ -140,6 +145,8 @@ public class CarroController implements ICarroDAO {
             System.out.println("Carro não encontrado.");
 
         } else if (num == 3) {
+            System.out.println(Cores.TEXT_WHITE +" Informe o ID:");
+            int id = ler.nextInt();
             for (int i = 0; i < carroSUVS.size(); i++) {
                 Carro carro = carroSUVS.get(i);
                 if (carro.getId() == id) {
@@ -154,11 +161,11 @@ public class CarroController implements ICarroDAO {
     @Override
     public void listar() {
         System.out.println("************************ HATCHS *****************************");
-        carroHatches.forEach(System.out::println);
+        carroHatches.forEach(CarroHatch::VisualizarCarro);
         System.out.println("************************ SEDAN *****************************");
-        carroSedans.forEach(System.out::println);
+        carroSedans.forEach(CarroSedan::VisualizarCarro);
         System.out.println("************************ SUV *****************************");
-        carroSUVS.stream().forEach(System.out::println);
+        carroSUVS.forEach(carro -> carro.VisualizarCarro());
     }
 
     @Override
@@ -239,7 +246,7 @@ public class CarroController implements ICarroDAO {
         String modelo = ler.next();
         System.out.print("Cor:");
         String cor = ler.next();
-        System.out.print("Quantidade de Lugares:");
+        System.out.print("Tamanho em Litros do Porta Malas:");
         int tamPortaMalas = ler.nextInt();
         System.out.print("Placa:");
         int placa = ler.nextInt();
@@ -271,8 +278,8 @@ public class CarroController implements ICarroDAO {
         String modelo = ler.next();
         System.out.print("Cor:");
         String cor = ler.next();
-        System.out.print("Quantidade de Lugares:");
-        String tracao = ler.nextLine();
+        System.out.print("Tipo Tração:");
+        String tracao = ler.next();
         System.out.print("Placa:");
         int placa = ler.nextInt();
 
