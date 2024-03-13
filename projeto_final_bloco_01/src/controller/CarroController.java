@@ -178,6 +178,8 @@ public class CarroController implements ICarroDAO {
         int num = ler.nextInt();
 
         if (num == 1){
+            System.out.println(Cores.TEXT_WHITE +" Informe o ID:");
+            int id = ler.nextInt();
             for (Carro carro : carroHatches) {
                 if (carro.getId() == id) {
                     return carro;
@@ -186,6 +188,8 @@ public class CarroController implements ICarroDAO {
             System.out.println("Carro não encontrado.");
             return null;
         } else if (num == 2) {
+            System.out.println(Cores.TEXT_WHITE +" Informe o ID:");
+            int id = ler.nextInt();
             for (Carro carro : carroSedans) {
                 if (carro.getId() == id) {
                     return carro;
@@ -194,6 +198,8 @@ public class CarroController implements ICarroDAO {
             System.out.println("Carro não encontrado.");
             return null;
         } else if (num == 3) {
+            System.out.println(Cores.TEXT_WHITE +" Informe o ID:");
+            int id = ler.nextInt();
             for (Carro carro : carroSUVS) {
                 if (carro.getId() == id) {
                     return carro;
