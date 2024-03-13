@@ -1,24 +1,19 @@
 package model;
 
-import util.Tipo;
-
 public abstract class Carro {
 
     private int id;
     private String marca;
-
     private String modelo;
     private String cor;
     private int placa;
-    private Tipo tipo;
 
-    public Carro(int id, String marca, String modelo, String cor, int placa, Tipo tipo) {
+    public Carro(int id, String marca, String modelo, String cor, int placa) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
         this.cor = cor;
         this.placa = placa;
-        this.tipo = tipo;
     }
 
     public int getId() {
@@ -61,14 +56,6 @@ public abstract class Carro {
         this.placa = placa;
     }
 
-    public Tipo getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(Tipo tipo) {
-        this.tipo = tipo;
-    }
-
     public void VisualizarCarro(){
 
         System.out.println("\n\n***********************************************************");
@@ -78,6 +65,5 @@ public abstract class Carro {
         System.out.println("Modelo do carro: " + this.modelo);
         System.out.println("Placa: " + this.placa);
         System.out.println("Cor: " + this.cor);
-
     }
 }
