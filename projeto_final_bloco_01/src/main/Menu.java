@@ -29,14 +29,13 @@ public class Menu {
             System.out.println("            6 - Sair                                 ");
             System.out.println("                                                     ");
             System.out.println("*****************************************************");
-            System.out.print("Entre com a opção desejada:                            ");
-            System.out.print("                                   " + Cores.TEXT_RESET);
+            System.out.print("Entre com a opção desejada:");
+            System.out.print("        " + Cores.TEXT_RESET);
 
             opcao = leia.nextInt();
 
             if (opcao == 6) {
                 System.out.println(Cores.TEXT_WHITE_BOLD + "\nSeu sonho do seu novo carro começa aqui!");
-                sobre();
                 leia.close();
                 System.exit(0);
             }
