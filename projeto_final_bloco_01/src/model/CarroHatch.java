@@ -22,4 +22,6 @@ public class CarroHatch extends Carro{
         System.out.println("Tipo de carro: HATCH");
         System.out.println("Numero de lugares: " + this.lugares);
     }
+
+
 }
